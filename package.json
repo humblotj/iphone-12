@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "firebase": "^8.6.2",
+    "gsap": "^3.6.1",
+    "lottie-web": "^5.7.8",
     "vue": "^3.0.0",
     "vue-eslint-parser": "^7.6.0"
   },

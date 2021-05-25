@@ -1,5 +1,5 @@
 <template>
-  <section class="_5g">
+  <section ref="fiveG" class="_5g">
     <div class="container container--center">
       <div class="section-header">
         <h2 class="section-heading">
@@ -11,42 +11,42 @@
         <div class="hardware">
           <img src="@/assets/5g_on_phone__qxgc670fz2aa_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 321px, (max-width: 991px) 520px, 770px"
                alt=""
+               :srcset="onPhoneSrcSet"
           >
-          <!--srcset="@/assets/5g_on_phone__qxgc670fz2aa_large_2x-p-500.jpeg 500w, @/assets/5g_on_phone__qxgc670fz2aa_large_2x-p-800.jpeg 800w, @/assets/5g_on_phone__qxgc670fz2aa_large_2x-p-1080.jpeg 1080w, @/assets/5g_on_phone__qxgc670fz2aa_large_2x.jpg 1540w"-->
           <div class="hardware-gradient" />
         </div>
         <div class="screen">
           <img src="@/assets/5g_top_ui__fh2pbo18aviq_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 269px, (max-width: 991px) 439px, 650px"
                alt="" class="screen-ui-top"
+               :srcset="topUISrcSet"
           >
-          <!--srcset="@/assets/5g_top_ui__fh2pbo18aviq_large_2x-p-500.jpeg 500w, @/assets/5g_top_ui__fh2pbo18aviq_large_2x.jpg 1300w"-->
           <div class="divider" />
           <ul role="list" class="downloads">
             <li class="download download--show">
               <img src="@/assets/5g_show_01__bf4l35s1jn1e_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
+                   :srcset="show1SrcSet"
               >
-              <!--srcset="@/assets/5g_show_01__bf4l35s1jn1e_large_2x-p-500.jpeg 500w, @/assets/5g_show_01__bf4l35s1jn1e_large_2x.jpg 1066w"-->
               <img src="@/assets/5g_show_01_downloading__ugasi8688yqi_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 138px, (max-width: 991px) 225px, 340px"
                    alt="" class="download-text"
+                   :srcset="show1DownloadSrcSet"
               >
-              <!--srcset="@/assets/5g_show_01_downloading__ugasi8688yqi_large_2x-p-500.jpeg 500w, @/assets/5g_show_01_downloading__ugasi8688yqi_large_2x.jpg 664w"-->
               <div class="ui-arrow" />
               <div class="download-divider" />
             </li>
             <li class="download download--film">
               <img src="@/assets/5g_show_02__f7pxk2oyioeq_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
+                   :srcset="show2SrcSet"
               >
-              <!--srcset="@/assets/5g_show_02__f7pxk2oyioeq_large_2x-p-500.jpeg 500w, @/assets/5g_show_02__f7pxk2oyioeq_large_2x.jpg 1066w"-->
-              <div data-animation-type="lottie" data-src="documents/download-progress.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="3.0030028806881908" data-duration="0" class="ui-download-progress" />
+              <div class="ui-download-progress" />
               <div class="download-divider" />
             </li>
             <li class="download download--show">
               <img src="@/assets/5g_show_03__c8qgtrgvtno2_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
+                   :srcset="show3SrcSet"
               >
-              <!--srcset="@/assets/5g_show_03__c8qgtrgvtno2_large_2x-p-500.jpeg 500w, @/assets/5g_show_03__c8qgtrgvtno2_large_2x.jpg 1066w"-->
               <img src="@/assets/5g_show_03_downloading__el9s5eeilbue_large_2x.jpg" loading="lazy" alt="" class="download-text">
               <div class="ui-arrow" />
               <div class="download-divider" />
@@ -54,44 +54,45 @@
             <li class="download download--show">
               <img src="@/assets/5g_show_04__dbzl203ndh2e_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
+                   :srcset="show4SrcSet"
               >
-              <!--srcset="@/assets/5g_show_04__dbzl203ndh2e_large_2x-p-500.jpeg 500w, @/assets/5g_show_04__dbzl203ndh2e_large_2x.jpg 1066w"-->
               <img src="@/assets/5g_show_04_downloading__bpwdwow1lmhe_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 138px, (max-width: 991px) 225px, 340px"
                    alt="" class="download-text"
+                   :srcset="show4DownloadSrcSet"
               >
-              <!--srcset="@/assets/5g_show_04_downloading__bpwdwow1lmhe_large_2x-p-500.jpeg 500w, @/assets/5g_show_04_downloading__bpwdwow1lmhe_large_2x.jpg 664w"-->
               <div class="ui-arrow" />
               <div class="download-divider" />
             </li>
             <li class="download download--show">
               <img src="@/assets/5g_show_05__ceuw0pl16936_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
+                   :srcset="show5SrcSet"
               >
-              <!--srcset="@/assets/5g_show_05__ceuw0pl16936_large_2x-p-500.jpeg 500w, @/assets/5g_show_05__ceuw0pl16936_large_2x.jpg 1066w"-->
               <img src="@/assets/5g_show_05_downloading__rn0ahwhpe0i2_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 138px, (max-width: 991px) 225px, 340px"
                    alt="" class="download-text"
+                   :srcset="show5DownloadSrcSet"
               >
-              <!--srcset="@/assets/5g_show_05_downloading__rn0ahwhpe0i2_large_2x-p-500.jpeg 500w, @/assets/5g_show_05_downloading__rn0ahwhpe0i2_large_2x.jpg 664w"-->
               <div class="ui-arrow" />
               <div class="download-divider" />
             </li>
             <li class="download download--film">
               <img src="@/assets/5g_show_06__cq7hdrxmx3o2_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
+                   :srcset="show6SrcSet"
               >
-              <!--srcset="@/assets/5g_show_06__cq7hdrxmx3o2_large_2x-p-500.jpeg 500w, @/assets/5g_show_06__cq7hdrxmx3o2_large_2x-p-800.jpeg 800w, @/assets/5g_show_06__cq7hdrxmx3o2_large_2x.jpg 1066w"-->
-              <div data-animation-type="lottie" data-src="documents/download-progress.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="3.0030028806881908" data-duration="0" class="ui-download-progress" />
+              <div class="ui-download-progress" />
               <div class="download-divider" />
             </li>
             <li class="download download--show">
               <img src="@/assets/5g_show_07__bz66o6mfl2c2_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
+                   :srcset="show7SrcSet"
+                   @load="handleLoad"
               >
-              <!--srcset="@/assets/5g_show_07__bz66o6mfl2c2_large_2x-p-500.jpeg 500w, @/assets/5g_show_07__bz66o6mfl2c2_large_2x.jpg 1066w"-->
               <img src="@/assets/5g_show_07_downloading__e3xx7ozr6owi_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 138px, (max-width: 991px) 225px, 340px"
                    alt="" class="download-text"
+                   :srcset="show7DownloadSrcSet"
               >
-              <!--srcset="@/assets/5g_show_07_downloading__e3xx7ozr6owi_large_2x-p-500.jpeg 500w, @/assets/5g_show_07_downloading__e3xx7ozr6owi_large_2x.jpg 664w"-->
               <div class="ui-arrow" />
               <div class="download-divider" />
             </li>
@@ -103,8 +104,123 @@
 </template>
 
 <script>
-export default {
+import { ref } from 'vue';
+import useAnimation from '../hooks/useAnimation';
+import download from '../assets/download.json';
+import onPhone500 from '../assets/5g_on_phone__qxgc670fz2aa_large_2x-p-500.jpeg';
+import onPhone800 from '../assets/5g_on_phone__qxgc670fz2aa_large_2x-p-800.jpeg';
+import onPhone1080 from '../assets/5g_on_phone__qxgc670fz2aa_large_2x-p-1080.jpeg';
+import onPhone1540 from '../assets/5g_on_phone__qxgc670fz2aa_large_2x.jpg';
+import topUI500 from '../assets/5g_top_ui__fh2pbo18aviq_large_2x-p-500.jpeg';
+import topUI1300 from '../assets/5g_top_ui__fh2pbo18aviq_large_2x.jpg';
+import show1500 from '../assets/5g_show_01__bf4l35s1jn1e_large_2x-p-500.jpeg';
+import show11066 from '../assets/5g_show_01__bf4l35s1jn1e_large_2x.jpg';
+import show1Download500 from '../assets/5g_show_01_downloading__ugasi8688yqi_large_2x-p-500.jpeg';
+import show1Download664 from '../assets/5g_show_01_downloading__ugasi8688yqi_large_2x.jpg';
+import show2500 from '../assets/5g_show_02__f7pxk2oyioeq_large_2x-p-500.jpeg';
+import show21066 from '../assets/5g_show_02__f7pxk2oyioeq_large_2x.jpg';
+import show3500 from '../assets/5g_show_03__c8qgtrgvtno2_large_2x-p-500.jpeg';
+import show31066 from '../assets/5g_show_03__c8qgtrgvtno2_large_2x.jpg';
+import show4500 from '../assets/5g_show_04__dbzl203ndh2e_large_2x-p-500.jpeg';
+import show41066 from '../assets/5g_show_04__dbzl203ndh2e_large_2x.jpg';
+import show4Download500 from '../assets/5g_show_04_downloading__bpwdwow1lmhe_large_2x-p-500.jpeg';
+import show4Download664 from '../assets/5g_show_04_downloading__bpwdwow1lmhe_large_2x.jpg';
+import show5500 from '../assets/5g_show_05__ceuw0pl16936_large_2x-p-500.jpeg';
+import show51066 from '../assets/5g_show_05__ceuw0pl16936_large_2x.jpg';
+import show5Download500 from '../assets/5g_show_05_downloading__rn0ahwhpe0i2_large_2x-p-500.jpeg';
+import show5Download664 from '../assets/5g_show_05_downloading__rn0ahwhpe0i2_large_2x.jpg';
+import show6500 from '../assets/5g_show_06__cq7hdrxmx3o2_large_2x-p-500.jpeg';
+import show6800 from '../assets/5g_show_06__cq7hdrxmx3o2_large_2x-p-800.jpeg';
+import show61066 from '../assets/5g_show_06__cq7hdrxmx3o2_large_2x.jpg';
+import show7500 from '../assets/5g_show_07__bz66o6mfl2c2_large_2x-p-500.jpeg';
+import show71066 from '../assets/5g_show_07__bz66o6mfl2c2_large_2x.jpg';
+import show7Download500 from '../assets/5g_show_07_downloading__e3xx7ozr6owi_large_2x-p-500.jpeg';
+import show7Download664 from '../assets/5g_show_07_downloading__e3xx7ozr6owi_large_2x.jpg';
 
+export default {
+  setup() {
+    const fiveG = ref(null);
+    const {
+      loadAnimation, lottieScroll, animateTo, animateFromTo,
+    } = useAnimation(fiveG);
+
+    return {
+      fiveG, loadAnimation, lottieScroll, animateTo, animateFromTo,
+    };
+  },
+  data() {
+    return {
+      onPhoneSrcSet: `${onPhone500} 500w, ${onPhone800} 800w, ${onPhone1080} 1080w, ${onPhone1540} 1540w`,
+      topUISrcSet: `${topUI500} 500w, ${topUI1300} 1300w`,
+      show1SrcSet: `${show1500} 500w, ${show11066} 1066w`,
+      show1DownloadSrcSet: `${show1Download500} 500w, ${show1Download664} 664w`,
+      show2SrcSet: `${show2500} 500w, ${show21066} 1066w`,
+      show3SrcSet: `${show3500} 500w, ${show31066} 1066w`,
+      show4SrcSet: `${show4500} 500w, ${show41066} 1066w`,
+      show4DownloadSrcSet: `${show4Download500} 500w, ${show4Download664} 664w`,
+      show5SrcSet: `${show5500} 500w, ${show51066} 1066w`,
+      show5DownloadSrcSet: `${show5Download500} 500w, ${show5Download664} 664w`,
+      show6SrcSet: `${show6500} 500w, ${show6800} 800w, ${show61066} 1066w`,
+      show7SrcSet: `${show7500} 500w, ${show71066} 1066w`,
+      show7DownloadSrcSet: `${show7Download500} 500w, ${show7Download664} 664w`,
+
+    };
+  },
+  // mounted() {
+  //   // console.log(this.fiveG.offsetHeight);
+  //   setTimeout(() => {
+  //     this.animateFromTo('.ix-shadow', { x: '-50%' }, { x: '50%' }, 0, 20);
+  //     this.animateFromTo(this.fiveG, { y: 15 }, { y: '-10%' }, 0, 50);
+  //     this.animateFromTo('.hardware-gradient', { y: 15 }, { y: 1002 }, 0, 50);
+
+  //     const element = this.fiveG;
+  //     const shows = element.querySelectorAll('.download--show');
+  //     for (let i = 0; i < shows.length; i++) {
+  //       this.animateFromTo(shows[i], { scale: 2, opacity: 0, y: '80%' }, {
+  //         scale: 1, opacity: 1, y: 0, ease: 'power4.out',
+  //       }, 0, 15);
+  //       this.animateTo('.download-text', { opacity: 0 }, 14, 15, false);
+  //     }
+  //     const films = element.querySelectorAll('.download--film');
+  //     for (let i = 0; i < films.length; i++) {
+  //       this.animateFromTo(films[i], { scale: 2, opacity: 0, y: '80%' }, {
+  //         scale: 1, opacity: 1, y: 0, ease: 'power4.out',
+  //       }, 0, 15);
+
+  //       const downloadAnimation = this.loadAnimation(films[i].querySelector('.ui-download-progress'), download, 'svg');
+  //       this.lottieScroll(downloadAnimation, {
+  //         start: 0, end: 15, to: 100,
+  //       }, films[i]);
+  //     }
+  //   }, 1000);
+  // },
+  methods: {
+    handleLoad() {
+      this.animateFromTo('.ix-shadow', { x: '-50%' }, { x: '50%' }, 0, 20);
+      this.animateFromTo(this.fiveG, { y: 15 }, { y: '-10%' }, 0, 50);
+      this.animateFromTo('.hardware-gradient', { y: 15 }, { y: 1002 }, 0, 50);
+
+      const element = this.fiveG;
+      const shows = element.querySelectorAll('.download--show');
+      for (let i = 0; i < shows.length; i++) {
+        this.animateFromTo(shows[i], { scale: 2, opacity: 0, y: '80%' }, {
+          scale: 1, opacity: 1, y: 0, ease: 'power4.out',
+        }, 0, 15);
+        this.animateTo('.download-text', { opacity: 0 }, 14, 15, false);
+      }
+      const films = element.querySelectorAll('.download--film');
+      for (let i = 0; i < films.length; i++) {
+        this.animateFromTo(films[i], { scale: 2, opacity: 0, y: '80%' }, {
+          scale: 1, opacity: 1, y: 0, ease: 'power4.out',
+        }, 0, 15);
+
+        const downloadAnimation = this.loadAnimation(films[i].querySelector('.ui-download-progress'), download, 'svg');
+        this.lottieScroll(downloadAnimation, {
+          start: 0, end: 15, to: 100,
+        }, films[i]);
+      }
+    },
+  },
 };
 </script>
 

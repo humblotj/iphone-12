@@ -1,136 +1,35 @@
 <template>
   <section class="design">
-    <div class="design-bezel">
-      <div class="container container--center">
-        <div class="sub-section-headline-wrap">
-          <div class="ix-shadow" />
-          <h3 class="sub-section-headline">
-            Less bezel, more screen.
-          </h3>
-        </div>
-        <img src="@/assets/design_less_bezel_static__deihs6pgwrcm_large_2x.jpg" loading="lazy" width="770" alt="" class="design-bezel-img">
-      </div>
-    </div>
-    <div class="design-display">
-      <div class="container">
-        <div data-poster-url="@/assets/display video-poster-00001.jpg" data-video-urls="@/assets/display-video-transcode.mp4,@/assets/display-video-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="video display-video w-background-video w-background-video-atom">
-          <video autoplay="" loop="" style="background-image:url(&quot;@/assets/display video-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-            <source src="@/assets/display-video-transcode.mp4" data-wf-ignore="true">
-            <source src="@/assets/display-video-transcode.webm" data-wf-ignore="true">
-          </video>
-        </div>
-        <div class="design-display-compare-wrap">
-          <div class="design-display-caption design-display-caption--left">
-            <div>iPhone 12 Pro Max</div>
-            <div class="design-display-caption-secondary">
-              6.7” Super Retina<br>XDR display
-            </div>
-          </div>
-          <div class="design-display-caption">
-            <div>iPhone 12 Pro</div>
-            <div class="design-display-caption-secondary">
-              6.1” Super Retina<br>XDR display
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container container--center">
-        <FakeLink :class-name="'learn-more-button w-button'">
-          Compare sizes to iPhone 11 Pro
-        </FakeLink>
-      </div>
-    </div>
-    <div class="design-glass">
-      <div class="container container--center-flex">
-        <div class="sub-section-headline-wrap">
-          <h3 class="sub-section-headline">
-            Kicks glass.
-          </h3>
-          <div class="ix-shadow" />
-        </div>
-        <img src="@/assets/design_tougher_glass__czlsbgxawrki_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 655px, 980px"
-             alt="" class="glass-img"
-        >
-        <!--srcset="@/assets/design_tougher_glass__czlsbgxawrki_large_2x-p-500.jpeg 500w, @/assets/design_tougher_glass__czlsbgxawrki_large_2x-p-800.jpeg 800w, @/assets/design_tougher_glass__czlsbgxawrki_large_2x.jpg 2608w"-->
-        <img src="@/assets/design_tougher_glass__czlsbgxawrki_small_2x.jpg" loading="lazy" sizes="(max-width: 767px) 433px, 100vw"
-             alt="" class="glass-img-mobile"
-        >
-        <!--srcset="@/assets/design_tougher_glass__czlsbgxawrki_small_2x-p-500.jpeg 500w, @/assets/design_tougher_glass__czlsbgxawrki_small_2x-p-800.jpeg 800w, @/assets/design_tougher_glass__czlsbgxawrki_small_2x.jpg 866w"-->
-        <div class="design-glass-subheading-wrap">
-          <p class="design-glass-subheading">
-            Ceramic Shield, tougher than any smartphone glass
-          </p>
-          <div class="ix-shadow" />
-        </div>
-        <FakeLink :class-name="'learn-more-button learn-more-button--blue w-button'">
-          Find out how
-        </FakeLink>
-      </div>
-    </div>
-    <div class="design-steel">
-      <div class="container">
-        <div data-animation-type="lottie" data-src="documents/steel.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="canvas" data-default-duration="2.1354687151560467" data-duration="0" data-preserve-aspect-ratio="none" class="steel-anim" />
-        <div class="design-steel-text-wrap design-steel-text-wrap--left">
-          <h3 class="design-steel-text">
-            Surgical-grade
-          </h3>
-          <div class="ix-shadow ix-shadow--vertical" />
-        </div>
-        <div class="design-steel-text-wrap design-steel-text-wrap--right">
-          <h3 class="design-steel-text">
-            stainless steel.
-          </h3>
-          <div class="ix-shadow ix-shadow--vertical" />
-        </div>
-      </div>
-    </div>
-    <div class="design-water">
-      <div class="container">
-        <img src="@/assets/design_water_resistance__bx3cq2uzbzw2_large_2x.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 596px, (max-width: 991px) 662px, 980px" srcset="images/design_water_resistance__bx3cq2uzbzw2_large_2x-p-500.jpeg 500w, images/design_water_resistance__bx3cq2uzbzw2_large_2x-p-800.jpeg 800w, images/design_water_resistance__bx3cq2uzbzw2_large_2x-p-1080.jpeg 1080w, images/design_water_resistance__bx3cq2uzbzw2_large_2x-p-1600.jpeg 1600w, images/design_water_resistance__bx3cq2uzbzw2_large_2x-p-2000.jpeg 2000w, images/design_water_resistance__bx3cq2uzbzw2_large_2x.jpg 2016w" alt="" class="water-img">
-        <div class="design-water-text-wrap">
-          <h3 class="sub-section-headline">
-            Blows other phones out of the water.
-          </h3>
-          <div class="sub-section-subheading sub-section-subheading--water">
-            Industry‑leading IP68 water resistance
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="design-finishes">
-      <div class="container">
-        <div data-poster-url="@/assets/finishes-poster-00001.jpg" data-video-urls="@/assets/finishes-transcode.mp4,@/assets/finishes-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="video video--finishes w-background-video w-background-video-atom">
-          <video autoplay="" loop="" style="background-image:url(&quot;@/assets/finishes-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-            <source src="@/assets/finishes-transcode.mp4" data-wf-ignore="true">
-            <source src="@/assets/finishes-transcode.webm" data-wf-ignore="true">
-          </video>
-        </div>
-      </div>
-      <div class="container container--center">
-        <div class="design-finishes-text-wrap">
-          <h3 class="sub-section-headline">
-            Four finishing touches.
-          </h3>
-          <div class="sub-section-subheading">
-            Pacific Blue, Gold, Silver, and Graphite
-          </div>
-        </div>
-      </div>
-    </div>
+    <DesignBezel />
+    <DesignDisplay />
+    <DesignGlass />
+    <DesignSteel />
+    <DesignWater />
+    <DesignFinishes />
   </section>
 </template>
 <script>
-import FakeLink from './FakeLink.vue';
+import DesignBezel from './Design/DesignBezel.vue';
+import DesignDisplay from './Design/DesignDisplay.vue';
+import DesignGlass from './Design/DesignGlass.vue';
+import DesignSteel from './Design/DesignSteel.vue';
+import DesignWater from './Design/DesignWater.vue';
+import DesignFinishes from './Design/DesignFinishes.vue';
 
 export default {
   name: 'Design',
   components: {
-    FakeLink,
+    DesignBezel,
+    DesignDisplay,
+    DesignGlass,
+    DesignSteel,
+    DesignWater,
+    DesignFinishes,
   },
 };
 </script>
 
-<style scoped>
+<style>
 .design {
   overflow: hidden;
 }
@@ -148,7 +47,7 @@ export default {
   padding-bottom: 150px;
 }
 
-.display-video {
+.design .display-video {
   width: 320px;
   height: 628px;
 }
@@ -168,9 +67,6 @@ export default {
 .design-display-compare-wrap {
   position: absolute;
   bottom: 250px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -217,6 +113,7 @@ export default {
   line-height: 1.12;
   font-weight: 600;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .design-steel {
@@ -230,7 +127,7 @@ export default {
   margin-left: auto;
 }
 
-.learn-more-button {
+.design .learn-more-button {
   margin-top: 64px;
   padding: 8px 16px;
   border: 1px solid #f5f5f7;
@@ -240,12 +137,12 @@ export default {
   line-height: 1.17064;
 }
 
-.learn-more-button:hover {
+.design .learn-more-button:hover {
   background-color: #fff;
   color: #000;
 }
 
-.learn-more-button.learn-more-button--blue {
+.design .learn-more-button.learn-more-button--blue {
   align-self: center;
   border-color: #61b6cd;
 }
@@ -256,6 +153,10 @@ export default {
   line-height: 1.2;
   font-weight: 600;
   letter-spacing: -0.005em;
+}
+
+.design-steel-text-wrap {
+    writing-mode: vertical-lr;
 }
 
 .design-steel-text-wrap {
@@ -388,6 +289,7 @@ export default {
     position: static;
     padding-top: 28px;
     justify-content: space-around;
+    opacity: 0;
   }
 
   .design-display-caption {
@@ -454,8 +356,6 @@ export default {
     margin-right: auto;
     margin-left: auto;
     -webkit-box-ordinal-group: 0;
-    -webkit-order: -1;
-    -ms-flex-order: -1;
     order: -1;
   }
 }

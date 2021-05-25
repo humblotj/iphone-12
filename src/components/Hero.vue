@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section ref="hero" class="hero">
     <div class="hero-header">
       <div class="container">
         <div class="hero-headline">
@@ -15,12 +15,12 @@
           <img src="@/assets/hero_endframe__e24jfrox7nu6_large_2x.jpg" loading="lazy"
                sizes="(max-width: 991px) 100vw, 1352px"
                alt="" class="hero-img"
+               :srcset="heroEndFrameSrcSet"
           >
-          <!-- srcset="@/assets/hero_endframe__e24jfrox7nu6_large_2x-p-500.jpeg 500w, @/assets/hero_endframe__e24jfrox7nu6_large_2x-p-800.jpeg 800w, @/assets/hero_endframe__e24jfrox7nu6_large_2x.jpg 2704w" -->
           <img src="@/assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x.jpg" loading="lazy" width="1020" sizes="100vw"
                alt="" class="hero-img-medium"
+               :srcset="heroEndFramePortraitSrcSet"
           >
-          <!-- srcset="@/assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x-p-500.jpeg 500w, @/assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x-p-800.jpeg 800w, @/assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x-p-1080.jpeg 1080w, @/assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x-p-1600.jpeg 1600w, @/assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x-p-2000.jpeg 2000w, @/assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x.jpg 2040w" -->
           <div data-poster-url="@/assets/hero%20video-poster-00001.jpg" data-video-urls="@/assets/hero-video-transcode.mp4,@/assets/hero-video-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="hero-video w-background-video w-background-video-atom">
             <video autoplay style="background-image:url(&quot;@/assets/hero%20video-poster-00001.jpg&quot;)" muted playsinline data-wf-ignore="true" data-object-fit="cover">
               <source src="@/assets/hero-video-transcode.mp4" data-wf-ignore="true">
@@ -56,9 +56,72 @@
   </section>
 </template>
 <script>
+import { ref } from 'vue';
+import { gsap } from 'gsap';
+import useAnimation from '../hooks/useAnimation';
+import heroEndframe500 from '../assets/hero_endframe__e24jfrox7nu6_large_2x-p-500.jpeg';
+import heroEndframe800 from '../assets/hero_endframe__e24jfrox7nu6_large_2x-p-800.jpeg';
+import heroEndframe2074 from '../assets/hero_endframe__e24jfrox7nu6_large_2x.jpg';
+import heroEndframePortrait500 from '../assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x-p-500.jpeg';
+import heroEndframePortrait800 from '../assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x-p-800.jpeg';
+import heroEndframePortrait1080 from '../assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x-p-1080.jpeg';
+import heroEndframePortrait1600 from '../assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x-p-1600.jpeg';
+import heroEndframePortrait2000 from '../assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x-p-2000.jpeg';
+import heroEndframePortrait2040 from '../assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x.jpg';
 
 export default {
+  setup() {
+    const hero = ref(null);
+    const {
+      animateFromTo, animateTo,
+    } = useAnimation(hero, false);
 
+    return {
+      hero, animateFromTo, animateTo,
+    };
+  },
+  data() {
+    return {
+      heroEndFrameSrcSet: `${heroEndframe500} 500w, ${heroEndframe800} 800w, ${heroEndframe2074} 2704w`,
+      heroEndFramePortraitSrcSet: `${heroEndframePortrait500} 500w, ${heroEndframePortrait800} 800w, ${heroEndframePortrait1080} 1080w, ${heroEndframePortrait1600} 1600w, ${heroEndframePortrait2000} 2000w, ${heroEndframePortrait2040} 2040w`,
+    };
+  },
+  mounted() {
+    gsap.fromTo(this.$refs.hero.querySelector('.ix-shadow'),
+      { x: '-50%' },
+      {
+        x: '55%',
+        duration: 1.5,
+        delay: 3.5,
+      });
+    gsap.to(this.$refs.hero.querySelectorAll('.hero-video, .hero-video-medium'),
+      {
+        opacity: 0,
+        duration: 0.25,
+        delay: 5.5,
+      });
+
+    gsap.to(this.$refs.hero.querySelectorAll('.hero-video-wrap img'),
+      {
+        opacity: 1,
+        duration: 0,
+        delay: 5.5,
+      });
+
+    this.opacity('.container', 0, 40, 1);
+    this.opacity('.container', 0, 40, 1);
+    this.move('.hero-video-wrap', 0, 40);
+    this.opacity('.hero-headline', 0, 12, 0);
+  },
+  methods: {
+    move(className, start, end, immediateRender = true) {
+      this.animateFromTo(className, { y: 0 }, { y: '-20vh' }, start, end, immediateRender);
+    },
+    opacity(className, start, end,
+      to, immediateRender = true) {
+      this.animateTo(className, { opacity: to }, start, end, immediateRender);
+    },
+  },
 };
 </script>
 
@@ -67,6 +130,11 @@ export default {
   padding-bottom: 25vh;
 }
 
+.container.container--hero-copy {
+  opacity: 0;
+  position: relative;
+  margin-top: -70px;
+}
 .hero-header {
   overflow: hidden;
 }
@@ -103,6 +171,10 @@ export default {
   top: -27px;
   z-index: -1;
   width: 1352px;
+}
+
+.hero-video-wrap img {
+  opacity: 0;
 }
 
 .hero-video {

@@ -1,5 +1,5 @@
 <template>
-  <div class="iphone-nav">
+  <div ref="iphoneNav" class="iphone-nav">
     <div class="container container--nav">
       <div class="iphone-nav-content">
         <FakeLink :class-name="'iphone-nav-title'">
@@ -33,6 +33,10 @@ export default {
 </script>
 
 <style scoped>
+.iphone-nav {
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
 .iphone-nav {
   position: sticky;
   top: 0px;

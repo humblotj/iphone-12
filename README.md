@@ -1,24 +1,2 @@
-# iphone-12
-
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# iPhone 12
+iPhone 12 Clone. Project made for educational purposes based on the webflow work of Moritz Petersen.

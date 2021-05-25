@@ -12,6 +12,12 @@
 </template>
 
 <script>
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import firebase from 'firebase';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'firebase/analytics';
+
 import Note from './components/Note.vue';
 import Nav from './components/Nav.vue';
 import IphoneNav from './components/IphoneNav.vue';
@@ -19,6 +25,14 @@ import Hero from './components/Hero.vue';
 import Design from './components/Design.vue';
 import FiveG from './components/FiveG.vue';
 import Thanks from './components/Thanks.vue';
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.defaults().ease = 'linear';
+
+const config = JSON.parse(process.env.VUE_APP_API_KEY);
+firebase.initializeApp({
+  ...config,
+});
 
 export default {
   name: 'App',
@@ -41,11 +55,6 @@ export default {
   max-width: 980px;
   margin-right: auto;
   margin-left: auto;
-}
-
-.container.container--hero-copy {
-  position: relative;
-  margin-top: -70px;
 }
 
 .container.container--center {
@@ -77,6 +86,38 @@ body {
 
 * {
     box-sizing: border-box;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.w-background-video>video {
+    background-size: cover;
+    background-position: 50% 50%;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    right: -100%;
+    bottom: -100%;
+    top: -100%;
+    left: -100%;
+    object-fit: cover;
+    z-index: -100;
+}
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .ix-shadow {

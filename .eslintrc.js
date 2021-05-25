@@ -20,7 +20,6 @@ module.exports = {
   },
   plugins: [
     'vue',
-    '@typescript-eslint',
   ],
   rules: {
     'vue/html-indent': ['error', 2, {
@@ -43,5 +42,6 @@ module.exports = {
     }],
     'vue/max-attributes-per-line': 0,
     'max-len': 0,
+    'no-plusplus': 0,
   },
 };
