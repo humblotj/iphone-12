@@ -45,6 +45,11 @@ export default {
     FiveG,
     Thanks,
   },
+  mounted() {
+    window.onbeforeunload = () => {
+      window.scrollTo(0, 0);
+    };
+  },
 };
 </script>
 
