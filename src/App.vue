@@ -14,7 +14,8 @@
 <script>
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import firebase from 'firebase';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import firebase from 'firebase/app';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'firebase/analytics';
 

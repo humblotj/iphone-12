@@ -7,7 +7,7 @@
           Less bezel, more screen.
         </h3>
       </div>
-      <img src="@/assets/design_less_bezel_static__deihs6pgwrcm_large_2x.jpg" loading="lazy" width="1540" height="1430" alt="" class="design-bezel-img" @load="handleLoad">
+      <img src="@/assets/design_less_bezel_static__deihs6pgwrcm_large_2x.jpg" loading="lazy" width="770" height="715" alt="" class="design-bezel-img" @load="handleLoad">
     </div>
   </div>
 </template>

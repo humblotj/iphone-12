@@ -47,16 +47,19 @@ const useAnimation = (ref, animationStartEntering = true) => {
       return;
     }
 
-    const animationStart = animationStartEntering ? `${(element.offsetHeight + window.innerHeight) * (start / 100)} bottom` : `${start}% ${start}%`;
-    const animationEnd = animationStartEntering ? `+=${(element.offsetHeight + window.innerHeight) * ((end - start) / 100)}` : `+=${element.offsetHeight * ((end - start) / 100)}`;
+    const trigger = typeof className === 'string' ? element : className;
 
-    const targets = typeof className === 'string' ? element.querySelectorAll(className) : className;
+    const animationStart = animationStartEntering ? `${(trigger.offsetHeight + window.innerHeight) * (start / 100)} bottom` : `${start}% ${start}%`;
+    const animationEnd = animationStartEntering ? `+=${(trigger.offsetHeight + window.innerHeight) * ((end - start) / 100)}` : `+=${trigger.offsetHeight * ((end - start) / 100)}`;
+
+    const targets = typeof className === 'string' ? trigger.querySelectorAll(className) : className;
+
     gsap.fromTo(targets, from,
       {
         ...to,
         immediateRender,
         scrollTrigger: {
-          trigger: typeof className === 'string' ? element : className,
+          trigger,
           scrub: true,
           start: animationStart,
           end: animationEnd,
@@ -71,16 +74,18 @@ const useAnimation = (ref, animationStartEntering = true) => {
       return;
     }
 
-    const animationStart = animationStartEntering ? `${(element.offsetHeight + window.innerHeight) * (start / 100)} bottom` : `${start}% ${start}%`;
-    const animationEnd = animationStartEntering ? `+=${(element.offsetHeight + window.innerHeight) * ((end - start) / 100)}` : `+=${element.offsetHeight * ((end - start) / 100)}`;
+    const trigger = typeof className === 'string' ? element : className;
 
-    const targets = typeof className === 'string' ? element.querySelectorAll(className) : className;
+    const animationStart = animationStartEntering ? `${(trigger.offsetHeight + window.innerHeight) * (start / 100)} bottom` : `${start}% ${start}%`;
+    const animationEnd = animationStartEntering ? `+=${(trigger.offsetHeight + window.innerHeight) * ((end - start) / 100)}` : `+=${trigger.offsetHeight * ((end - start) / 100)}`;
+
+    const targets = typeof className === 'string' ? trigger.querySelectorAll(className) : className;
     gsap.to(targets,
       {
         ...to,
         immediateRender,
         scrollTrigger: {
-          trigger: typeof className === 'string' ? element : className,
+          trigger,
           scrub: true,
           start: animationStart,
           end: animationEnd,
