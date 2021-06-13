@@ -220,7 +220,6 @@ export default {
       const animationStart = `${(element.offsetHeight + window.innerHeight) * (start / 100)} bottom`;
       const animationEnd = `+=${(element.offsetHeight + window.innerHeight) * ((end - start) / 100)}`;
 
-      console.log(element, className, animationStart, animationEnd);
       const targets = typeof className === 'string' ? element.querySelectorAll(className) : className;
       gsap.to(targets,
         {
