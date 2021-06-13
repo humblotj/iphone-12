@@ -96,6 +96,7 @@ body {
 img {
     border: 0;
     max-width: 100%;
+    height: auto;
     vertical-align: middle;
     display: inline-block;
 }

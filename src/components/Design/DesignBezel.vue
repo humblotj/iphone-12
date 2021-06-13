@@ -7,7 +7,7 @@
           Less bezel, more screen.
         </h3>
       </div>
-      <img src="@/assets/design_less_bezel_static__deihs6pgwrcm_large_2x.jpg" loading="lazy" width="770" alt="" class="design-bezel-img" @load="handleLoad">
+      <img src="@/assets/design_less_bezel_static__deihs6pgwrcm_large_2x.jpg" loading="lazy" width="1540" height="1430" alt="" class="design-bezel-img" @load="handleLoad">
     </div>
   </div>
 </template>
@@ -25,11 +25,9 @@ export default {
       designBezel, animateFromTo,
     };
   },
-  methods: {
-    handleLoad() {
-      this.animateFromTo('.ix-shadow', { x: '-50%' }, { x: '50%' }, 20, 35);
-      this.animateFromTo('.design-bezel-img', { y: '10%' }, { y: '-10%' }, 20, 50);
-    },
+  mounted() {
+    this.animateFromTo('.ix-shadow', { x: '-50%' }, { x: '50%' }, 20, 35);
+    this.animateFromTo('.design-bezel-img', { y: '10%' }, { y: '-10%' }, 20, 50);
   },
 };
 </script>

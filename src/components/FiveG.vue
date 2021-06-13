@@ -12,7 +12,8 @@
           <img src="@/assets/5g_on_phone__qxgc670fz2aa_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 321px, (max-width: 991px) 520px, 770px"
                alt=""
                :srcset="onPhoneSrcSet"
-               @load="handleLoad"
+               width="1540"
+               height="2672"
           >
           <div class="hardware-gradient" />
         </div>
@@ -20,7 +21,8 @@
           <img src="@/assets/5g_top_ui__fh2pbo18aviq_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 269px, (max-width: 991px) 439px, 650px"
                alt="" class="screen-ui-top"
                :srcset="topUISrcSet"
-               @load="handleLoad"
+               width="1300"
+               height="400"
           >
           <div class="divider" />
           <ul role="list" class="downloads">
@@ -28,7 +30,8 @@
               <img src="@/assets/5g_show_01__bf4l35s1jn1e_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
                    :srcset="show1SrcSet"
-                   @load="handleLoad"
+                   width="1066"
+                   height="204"
               >
               <img src="@/assets/5g_show_01_downloading__ugasi8688yqi_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 138px, (max-width: 991px) 225px, 340px"
                    alt="" class="download-text"
@@ -42,7 +45,8 @@
               <img src="@/assets/5g_show_02__f7pxk2oyioeq_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
                    :srcset="show2SrcSet"
-                   @load="handleLoad"
+                   width="1066"
+                   height="204"
               >
               <div class="ui-download-progress" />
               <div class="download-divider" />
@@ -51,7 +55,8 @@
               <img src="@/assets/5g_show_03__c8qgtrgvtno2_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
                    :srcset="show3SrcSet"
-                   @load="handleLoad"
+                   width="664"
+                   height="204"
               >
               <img src="@/assets/5g_show_03_downloading__el9s5eeilbue_large_2x.jpg" loading="lazy" alt="" class="download-text" @load="handleLoad">
               <div class="ui-arrow" />
@@ -61,12 +66,14 @@
               <img src="@/assets/5g_show_04__dbzl203ndh2e_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
                    :srcset="show4SrcSet"
-                   @load="handleLoad"
+                   width="1066"
+                   height="204"
               >
               <img src="@/assets/5g_show_04_downloading__bpwdwow1lmhe_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 138px, (max-width: 991px) 225px, 340px"
                    alt="" class="download-text"
                    :srcset="show4DownloadSrcSet"
-                   @load="handleLoad"
+                   width="664"
+                   height="204"
               >
               <div class="ui-arrow" />
               <div class="download-divider" />
@@ -75,11 +82,14 @@
               <img src="@/assets/5g_show_05__ceuw0pl16936_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
                    :srcset="show5SrcSet"
-                   @load="handleLoad"
+                   width="1066"
+                   height="204"
               >
               <img src="@/assets/5g_show_05_downloading__rn0ahwhpe0i2_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 138px, (max-width: 991px) 225px, 340px"
                    alt="" class="download-text"
-                   :srcset="show5DownloadSrcSet" @load="handleLoad"
+                   :srcset="show5DownloadSrcSet"
+                   width="664"
+                   height="204"
               >
               <div class="ui-arrow" />
               <div class="download-divider" />
@@ -87,7 +97,9 @@
             <li class="download download--film">
               <img src="@/assets/5g_show_06__cq7hdrxmx3o2_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
-                   :srcset="show6SrcSet" @load="handleLoad"
+                   :srcset="show6SrcSet"
+                   width="1066"
+                   height="204"
               >
               <div class="ui-download-progress" />
               <div class="download-divider" />
@@ -96,12 +108,14 @@
               <img src="@/assets/5g_show_07__bz66o6mfl2c2_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 221px, (max-width: 991px) 360px, 533px"
                    alt="" class="download-img"
                    :srcset="show7SrcSet"
-                   @load="handleLoad"
+                   width="1066"
+                   height="204"
               >
               <img src="@/assets/5g_show_07_downloading__e3xx7ozr6owi_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 138px, (max-width: 991px) 225px, 340px"
                    alt="" class="download-text"
                    :srcset="show7DownloadSrcSet"
-                   @load="handleLoad"
+                   width="664"
+                   height="204"
               >
               <div class="ui-arrow" />
               <div class="download-divider" />
@@ -177,38 +191,30 @@ export default {
 
     };
   },
-  methods: {
-    handleLoad() {
-      this.imageLoaded++;
-      if (this.imageLoaded === 14) {
-        this.startAnimation();
-      }
-    },
-    startAnimation() {
-      this.animateFromTo('.ix-shadow', { x: '-50%' }, { x: '50%' }, 0, 20);
-      this.animateFromTo(this.fiveG, { y: 15 }, { y: '-10%' }, 0, 50);
-      this.animateFromTo('.hardware-gradient', { y: 15 }, { y: 1002 }, 0, 50);
+  mounted() {
+    this.animateFromTo('.ix-shadow', { x: '-50%' }, { x: '50%' }, 0, 20);
+    this.animateFromTo(this.fiveG, { y: 15 }, { y: '-10%' }, 0, 50);
+    this.animateFromTo('.hardware-gradient', { y: 15 }, { y: 1002 }, 0, 50);
 
-      const element = this.fiveG;
-      const shows = element.querySelectorAll('.download--show');
-      for (let i = 0; i < shows.length; i++) {
-        this.animateFromTo(shows[i], { scale: 2, opacity: 0, y: '80%' }, {
-          scale: 1, opacity: 1, y: 0, ease: 'power4.out',
-        }, 0, 15);
-        this.animateTo('.download-text', { opacity: 0 }, 14, 15, false);
-      }
-      const films = element.querySelectorAll('.download--film');
-      for (let i = 0; i < films.length; i++) {
-        this.animateFromTo(films[i], { scale: 2, opacity: 0, y: '80%' }, {
-          scale: 1, opacity: 1, y: 0, ease: 'power4.out',
-        }, 0, 15);
+    const element = this.fiveG;
+    const shows = element.querySelectorAll('.download--show');
+    for (let i = 0; i < shows.length; i++) {
+      this.animateFromTo(shows[i], { scale: 2, opacity: 0, y: '80%' }, {
+        scale: 1, opacity: 1, y: 0, ease: 'power4.out',
+      }, 0, 15);
+      this.animateTo('.download-text', { opacity: 0 }, 14, 15, false);
+    }
+    const films = element.querySelectorAll('.download--film');
+    for (let i = 0; i < films.length; i++) {
+      this.animateFromTo(films[i], { scale: 2, opacity: 0, y: '80%' }, {
+        scale: 1, opacity: 1, y: 0, ease: 'power4.out',
+      }, 0, 15);
 
-        const downloadAnimation = this.loadAnimation(films[i].querySelector('.ui-download-progress'), download, 'svg');
-        this.lottieScroll(downloadAnimation, {
-          start: 0, end: 15, to: 100,
-        }, films[i]);
-      }
-    },
+      const downloadAnimation = this.loadAnimation(films[i].querySelector('.ui-download-progress'), download, 'svg');
+      this.lottieScroll(downloadAnimation, {
+        start: 0, end: 15, to: 100,
+      }, films[i]);
+    }
   },
 };
 </script>

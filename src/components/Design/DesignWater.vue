@@ -4,7 +4,7 @@
       <img src="@/assets/design_water_resistance__bx3cq2uzbzw2_large_2x.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 596px, (max-width: 991px) 662px, 980px"
            alt="" class="water-img"
            :srcset="waterSrcSet"
-           @load="handleLoad"
+           width="2000" height="1964"
       >
       <div class="design-water-text-wrap">
         <h3 class="sub-section-headline">
@@ -42,14 +42,12 @@ export default {
       waterSrcSet: `${water500} 500w, ${water800} 800w, ${water1080} 1080w, ${water1600} 1600w, ${water2000} 2000w, ${water2016} 2016w`,
     };
   },
-  methods: {
-    handleLoad() {
-      this.animateTo('.water-img', { opacity: 1 }, 10, 25);
-      this.animateFromTo('.water-img', { y: 100 }, { y: -100 }, 20, 80);
-      this.animateFromTo('.design-water-text-wrap', { y: -150 }, { y: 150 }, 20, 80);
-      this.animateTo('.design-water-text-wrap', { opacity: 1 }, 20, 40);
-      this.animateTo('.container', { opacity: 0 }, 60, 80, false);
-    },
+  mounted() {
+    this.animateTo('.water-img', { opacity: 1 }, 10, 25);
+    this.animateFromTo('.water-img', { y: 100 }, { y: -100 }, 20, 80);
+    this.animateFromTo('.design-water-text-wrap', { y: -150 }, { y: 150 }, 20, 80);
+    this.animateTo('.design-water-text-wrap', { opacity: 1 }, 20, 40);
+    this.animateTo('.container', { opacity: 0 }, 60, 80, false);
   },
 };
 </script>
