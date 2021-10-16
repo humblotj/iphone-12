@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  props: { className: String },
+  props: { className: { type: String, default: '' } },
 
   setup() {
     const click = (e) => {
