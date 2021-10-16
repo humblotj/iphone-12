@@ -3,11 +3,17 @@
     <div class="container container--center">
       <div class="sub-section-headline-wrap">
         <div class="ix-shadow" />
-        <h3 class="sub-section-headline">
-          Less bezel, more screen.
-        </h3>
+        <h3 class="sub-section-headline">Less bezel, more screen.</h3>
       </div>
-      <img src="@/assets/design_less_bezel_static__deihs6pgwrcm_large_2x.jpg" loading="lazy" width="770" height="715" alt="" class="design-bezel-img" @load="handleLoad">
+      <img
+        src="@/assets/design_less_bezel_static__deihs6pgwrcm_large_2x.jpg"
+        loading="lazy"
+        width="770"
+        height="715"
+        alt=""
+        class="design-bezel-img"
+        @load="handleLoad"
+      />
     </div>
   </div>
 </template>
@@ -22,7 +28,8 @@ export default {
     const { animateFromTo } = useAnimation(designBezel);
 
     return {
-      designBezel, animateFromTo,
+      designBezel,
+      animateFromTo,
     };
   },
   mounted() {

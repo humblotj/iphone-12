@@ -18,9 +18,7 @@ const useAnimation = (ref, animationStartEntering = true) => {
     });
   };
 
-  const lottieScroll = (animation, {
-    start, end, to,
-  }, selfRender = false) => {
+  const lottieScroll = (animation, { start, end, to }, selfRender = false) => {
     const element = !selfRender ? ref.value : selfRender;
     if (!element) {
       return;
@@ -40,8 +38,7 @@ const useAnimation = (ref, animationStartEntering = true) => {
     });
   };
 
-  const animateFromTo = (className, from,
-    to, start, end, immediateRender = true) => {
+  const animateFromTo = (className, from, to, start, end, immediateRender = true) => {
     const element = ref.value;
     if (!element) {
       return;
@@ -49,26 +46,28 @@ const useAnimation = (ref, animationStartEntering = true) => {
 
     const trigger = typeof className === 'string' ? element : className;
 
-    const animationStart = animationStartEntering ? `${(trigger.offsetHeight + window.innerHeight) * (start / 100)} bottom` : `${start}% ${start}%`;
-    const animationEnd = animationStartEntering ? `+=${(trigger.offsetHeight + window.innerHeight) * ((end - start) / 100)}` : `+=${trigger.offsetHeight * ((end - start) / 100)}`;
+    const animationStart = animationStartEntering
+      ? `${(trigger.offsetHeight + window.innerHeight) * (start / 100)} bottom`
+      : `${start}% ${start}%`;
+    const animationEnd = animationStartEntering
+      ? `+=${(trigger.offsetHeight + window.innerHeight) * ((end - start) / 100)}`
+      : `+=${trigger.offsetHeight * ((end - start) / 100)}`;
 
     const targets = typeof className === 'string' ? trigger.querySelectorAll(className) : className;
 
-    gsap.fromTo(targets, from,
-      {
-        ...to,
-        immediateRender,
-        scrollTrigger: {
-          trigger,
-          scrub: true,
-          start: animationStart,
-          end: animationEnd,
-        },
-      });
+    gsap.fromTo(targets, from, {
+      ...to,
+      immediateRender,
+      scrollTrigger: {
+        trigger,
+        scrub: true,
+        start: animationStart,
+        end: animationEnd,
+      },
+    });
   };
 
-  const animateTo = (className, to,
-    start, end, immediateRender = true) => {
+  const animateTo = (className, to, start, end, immediateRender = true) => {
     const element = ref.value;
     if (!element) {
       return;
@@ -76,25 +75,31 @@ const useAnimation = (ref, animationStartEntering = true) => {
 
     const trigger = typeof className === 'string' ? element : className;
 
-    const animationStart = animationStartEntering ? `${(trigger.offsetHeight + window.innerHeight) * (start / 100)} bottom` : `${start}% ${start}%`;
-    const animationEnd = animationStartEntering ? `+=${(trigger.offsetHeight + window.innerHeight) * ((end - start) / 100)}` : `+=${trigger.offsetHeight * ((end - start) / 100)}`;
+    const animationStart = animationStartEntering
+      ? `${(trigger.offsetHeight + window.innerHeight) * (start / 100)} bottom`
+      : `${start}% ${start}%`;
+    const animationEnd = animationStartEntering
+      ? `+=${(trigger.offsetHeight + window.innerHeight) * ((end - start) / 100)}`
+      : `+=${trigger.offsetHeight * ((end - start) / 100)}`;
 
     const targets = typeof className === 'string' ? trigger.querySelectorAll(className) : className;
-    gsap.to(targets,
-      {
-        ...to,
-        immediateRender,
-        scrollTrigger: {
-          trigger,
-          scrub: true,
-          start: animationStart,
-          end: animationEnd,
-        },
-      });
+    gsap.to(targets, {
+      ...to,
+      immediateRender,
+      scrollTrigger: {
+        trigger,
+        scrub: true,
+        start: animationStart,
+        end: animationEnd,
+      },
+    });
   };
 
   return {
-    loadAnimation, lottieScroll, animateFromTo, animateTo,
+    loadAnimation,
+    lottieScroll,
+    animateFromTo,
+    animateTo,
   };
 };
 

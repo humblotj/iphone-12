@@ -2,19 +2,11 @@
   <div ref="iphoneNav" class="iphone-nav">
     <div class="container container--nav">
       <div class="iphone-nav-content">
-        <FakeLink :class-name="'iphone-nav-title'">
-          iPhone 12 Pro
-        </FakeLink>
+        <FakeLink :class-name="'iphone-nav-title'"> iPhone 12 Pro </FakeLink>
         <div class="iphone-nav-menu">
-          <FakeLink :class-name="'iphone-nav-link iphone-nav-link--current'">
-            Overview
-          </FakeLink>
-          <FakeLink :class-name="'iphone-nav-link'">
-            Tech Specs
-          </FakeLink>
-          <FakeLink :class-name="'buy-button w-button'">
-            Shop
-          </FakeLink>
+          <FakeLink :class-name="'iphone-nav-link iphone-nav-link--current'"> Overview </FakeLink>
+          <FakeLink :class-name="'iphone-nav-link'"> Tech Specs </FakeLink>
+          <FakeLink :class-name="'buy-button w-button'"> Shop </FakeLink>
         </div>
       </div>
     </div>
@@ -34,7 +26,7 @@ export default {
 
 <style scoped>
 .iphone-nav {
-    backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
 }
 
 .iphone-nav {
@@ -95,7 +87,6 @@ export default {
     padding-right: 16px;
     padding-left: 16px;
   }
-
 }
 
 @media screen and (max-width: 479px) {

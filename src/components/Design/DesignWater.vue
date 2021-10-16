@@ -1,15 +1,18 @@
 <template>
   <div ref="designWater" class="design-water">
     <div class="container">
-      <img src="@/assets/design_water_resistance__bx3cq2uzbzw2_large_2x.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 596px, (max-width: 991px) 662px, 980px"
-           alt="" class="water-img"
-           :srcset="waterSrcSet"
-           width="2000" height="1964"
-      >
+      <img
+        src="@/assets/design_water_resistance__bx3cq2uzbzw2_large_2x.jpg"
+        loading="lazy"
+        sizes="(max-width: 479px) 100vw, (max-width: 767px) 596px, (max-width: 991px) 662px, 980px"
+        alt=""
+        class="water-img"
+        :srcset="waterSrcSet"
+        width="2000"
+        height="1964"
+      />
       <div class="design-water-text-wrap">
-        <h3 class="sub-section-headline">
-          Blows other phones out of the water.
-        </h3>
+        <h3 class="sub-section-headline">Blows other phones out of the water.</h3>
         <div class="sub-section-subheading sub-section-subheading--water">
           Industry‑leading IP68 water resistance
         </div>
@@ -34,7 +37,9 @@ export default {
     const { animateTo, animateFromTo } = useAnimation(designWater);
 
     return {
-      designWater, animateTo, animateFromTo,
+      designWater,
+      animateTo,
+      animateFromTo,
     };
   },
   data() {
@@ -54,9 +59,9 @@ export default {
 
 <style scoped>
 .water-img {
-    opacity: 0;
+  opacity: 0;
 }
 .design-water-text-wrap {
-    opacity: 0;
+  opacity: 0;
 }
 </style>

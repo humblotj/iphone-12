@@ -156,7 +156,7 @@ export default {
 }
 
 .design-steel-text-wrap {
-    writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
 }
 
 .design-steel-text-wrap {
@@ -212,7 +212,7 @@ export default {
     padding-top: 140px;
   }
 
-    .design-bezel-img {
+  .design-bezel-img {
     width: 590px;
   }
 
@@ -377,5 +377,4 @@ export default {
     text-align: left;
   }
 }
-
 </style>

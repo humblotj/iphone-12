@@ -1,11 +1,14 @@
 <template>
   <div class="thanks">
     <div class="container container--center">
-      <h5 class="thanks-heading">
-        Thanks for scrolling through.
-      </h5>
+      <h5 class="thanks-heading">Thanks for scrolling through.</h5>
       <div className="madeby">
-        <a href="https://webflow.com/website/iPhone-12-Pro-Rebuild" target="_blank" rel="noreferrer" class="open-in-webflow-link w-inline-block">
+        <a
+          href="https://webflow.com/website/iPhone-12-Pro-Rebuild"
+          target="_blank"
+          rel="noreferrer"
+          class="open-in-webflow-link w-inline-block"
+        >
           <div className="text-block">Based on the workflow project of Moritz Petersen</div>
         </a>
       </div>
@@ -14,9 +17,7 @@
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style scoped>

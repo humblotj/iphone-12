@@ -3,40 +3,86 @@
     <div class="hero-header">
       <div class="container">
         <div class="hero-headline">
-          <h1 class="hero-heading-eyebrow">
-            iPhone 12 Pro
-          </h1>
-          <h2 class="hero-heading">
-            It&#x27;s a leap year.
-          </h2>
+          <h1 class="hero-heading-eyebrow">iPhone 12 Pro</h1>
+          <h2 class="hero-heading">It&#x27;s a leap year.</h2>
           <div class="ix-shadow" />
         </div>
         <div class="hero-video-wrap">
-          <img src="@/assets/hero_endframe__e24jfrox7nu6_large_2x.jpg" loading="lazy"
-               sizes="(max-width: 991px) 100vw, 1352px"
-               alt="" class="hero-img"
-               :srcset="heroEndFrameSrcSet"
+          <img
+            src="@/assets/hero_endframe__e24jfrox7nu6_large_2x.jpg"
+            loading="lazy"
+            sizes="(max-width: 991px) 100vw, 1352px"
+            alt=""
+            class="hero-img"
+            :srcset="heroEndFrameSrcSet"
+          />
+          <img
+            src="@/assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x.jpg"
+            loading="lazy"
+            width="1020"
+            sizes="100vw"
+            alt=""
+            class="hero-img-medium"
+            :srcset="heroEndFramePortraitSrcSet"
+          />
+          <div
+            data-poster-url="@/assets/hero%20video-poster-00001.jpg"
+            data-video-urls="@/assets/hero-video-transcode.mp4,@/assets/hero-video-transcode.webm"
+            data-autoplay="true"
+            data-loop="true"
+            data-wf-ignore="true"
+            class="hero-video w-background-video w-background-video-atom"
           >
-          <img src="@/assets/hero_endframe_portrait__k4dfs3u1zwi2_medium_2x.jpg" loading="lazy" width="1020" sizes="100vw"
-               alt="" class="hero-img-medium"
-               :srcset="heroEndFramePortraitSrcSet"
-          >
-          <div data-poster-url="@/assets/hero%20video-poster-00001.jpg" data-video-urls="@/assets/hero-video-transcode.mp4,@/assets/hero-video-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="hero-video w-background-video w-background-video-atom">
-            <video autoplay style="background-image:url(&quot;@/assets/hero%20video-poster-00001.jpg&quot;)" muted playsinline data-wf-ignore="true" data-object-fit="cover">
-              <source src="@/assets/hero-video-transcode.mp4" data-wf-ignore="true">
-              <source src="@/assets/hero-video-transcode.webm" data-wf-ignore="true">
+            <video
+              autoplay
+              style="background-image: url('@/assets/hero%20video-poster-00001.jpg')"
+              muted
+              playsinline
+              data-wf-ignore="true"
+              data-object-fit="cover"
+            >
+              <source src="@/assets/hero-video-transcode.mp4" data-wf-ignore="true" />
+              <source src="@/assets/hero-video-transcode.webm" data-wf-ignore="true" />
             </video>
           </div>
-          <div data-poster-url="@/assets/hero%20medium-poster-00001.jpg" data-video-urls="@/assets/hero-medium-transcode.mp4,@/assets/hero-medium-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="hero-video-medium w-background-video w-background-video-atom">
-            <video autoplay style="background-image:url(&quot;@/assets/hero%20medium-poster-00001.jpg&quot;)" muted playsinline data-wf-ignore="true" data-object-fit="cover">
-              <source src="@/assets/hero-medium-transcode.mp4" data-wf-ignore="true">
-              <source src="@/assets/hero-medium-transcode.webm" data-wf-ignore="true">
+          <div
+            data-poster-url="@/assets/hero%20medium-poster-00001.jpg"
+            data-video-urls="@/assets/hero-medium-transcode.mp4,@/assets/hero-medium-transcode.webm"
+            data-autoplay="true"
+            data-loop="true"
+            data-wf-ignore="true"
+            class="hero-video-medium w-background-video w-background-video-atom"
+          >
+            <video
+              autoplay
+              style="background-image: url('@/assets/hero%20medium-poster-00001.jpg')"
+              muted
+              playsinline
+              data-wf-ignore="true"
+              data-object-fit="cover"
+            >
+              <source src="@/assets/hero-medium-transcode.mp4" data-wf-ignore="true" />
+              <source src="@/assets/hero-medium-transcode.webm" data-wf-ignore="true" />
             </video>
           </div>
-          <div data-poster-url="@/assets/hero%20small-poster-00001.jpg" data-video-urls="@/assets/hero%20small-transcode.mp4,@/assets/hero-small-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="hero-video-small w-background-video w-background-video-atom">
-            <video autoplay style="background-image:url(&quot;@/assets/hero%20small-poster-00001.jpg&quot;)" muted playsinline data-wf-ignore="true" data-object-fit="cover">
-              <source src="@/assets/hero-small-transcode.mp4" data-wf-ignore="true">
-              <source src="@/assets/hero-small-transcode.webm" data-wf-ignore="true">
+          <div
+            data-poster-url="@/assets/hero%20small-poster-00001.jpg"
+            data-video-urls="@/assets/hero%20small-transcode.mp4,@/assets/hero-small-transcode.webm"
+            data-autoplay="true"
+            data-loop="true"
+            data-wf-ignore="true"
+            class="hero-video-small w-background-video w-background-video-atom"
+          >
+            <video
+              autoplay
+              style="background-image: url('@/assets/hero%20small-poster-00001.jpg')"
+              muted
+              playsinline
+              data-wf-ignore="true"
+              data-object-fit="cover"
+            >
+              <source src="@/assets/hero-small-transcode.mp4" data-wf-ignore="true" />
+              <source src="@/assets/hero-small-transcode.webm" data-wf-ignore="true" />
             </video>
           </div>
         </div>
@@ -44,13 +90,16 @@
     </div>
     <div class="container container--hero-copy">
       <p class="intro-paragraph">
-        5G goes Pro. A14 Bionic rockets past every other smartphone chip. The Pro camera system takes low-light photography to the next level — with an even bigger jump on iPhone 12 Pro Max. And Ceramic Shield delivers four times better drop performance. Let’s see what this thing can do.
+        5G goes Pro. A14 Bionic rockets past every other smartphone chip. The Pro camera system
+        takes low-light photography to the next level — with an even bigger jump on iPhone 12 Pro
+        Max. And Ceramic Shield delivers four times better drop performance. Let’s see what this
+        thing can do.
       </p>
       <p class="intro-paragraph intro-paragraph--small">
-        iPhone 12 Pro available 10.23 | Pre-order iPhone 12 Pro Max 11.6<br>
+        iPhone 12 Pro available 10.23 | Pre-order iPhone 12 Pro Max 11.6<br />
       </p>
       <p class="intro-paragraph intro-paragraph--small">
-        From $41.62/mo. or $999 before trade‑in<br>
+        From $41.62/mo. or $999 before trade‑in<br />
       </p>
     </div>
   </section>
@@ -72,12 +121,12 @@ import heroEndframePortrait2040 from '../assets/hero_endframe_portrait__k4dfs3u1
 export default {
   setup() {
     const hero = ref(null);
-    const {
-      animateFromTo, animateTo,
-    } = useAnimation(hero, false);
+    const { animateFromTo, animateTo } = useAnimation(hero, false);
 
     return {
-      hero, animateFromTo, animateTo,
+      hero,
+      animateFromTo,
+      animateTo,
     };
   },
   data() {
@@ -87,26 +136,26 @@ export default {
     };
   },
   mounted() {
-    gsap.fromTo(this.$refs.hero.querySelector('.ix-shadow'),
+    gsap.fromTo(
+      this.$refs.hero.querySelector('.ix-shadow'),
       { x: '-50%' },
       {
         x: '55%',
         duration: 1.5,
         delay: 3.5,
-      });
-    gsap.to(this.$refs.hero.querySelectorAll('.hero-video, .hero-video-medium'),
-      {
-        opacity: 0,
-        duration: 0.25,
-        delay: 5.5,
-      });
+      },
+    );
+    gsap.to(this.$refs.hero.querySelectorAll('.hero-video, .hero-video-medium'), {
+      opacity: 0,
+      duration: 0.25,
+      delay: 5.5,
+    });
 
-    gsap.to(this.$refs.hero.querySelectorAll('.hero-video-wrap img'),
-      {
-        opacity: 1,
-        duration: 0,
-        delay: 5.5,
-      });
+    gsap.to(this.$refs.hero.querySelectorAll('.hero-video-wrap img'), {
+      opacity: 1,
+      duration: 0,
+      delay: 5.5,
+    });
 
     this.opacity('.container', 0, 40, 1);
     this.opacity('.container', 0, 40, 1);
@@ -117,8 +166,7 @@ export default {
     move(className, start, end, immediateRender = true) {
       this.animateFromTo(className, { y: 0 }, { y: '-20vh' }, start, end, immediateRender);
     },
-    opacity(className, start, end,
-      to, immediateRender = true) {
+    opacity(className, start, end, to, immediateRender = true) {
       this.animateTo(className, { opacity: to }, start, end, immediateRender);
     },
   },
@@ -250,7 +298,7 @@ export default {
     font-size: 17px;
   }
 
-   .hero-img-medium {
+  .hero-img-medium {
     display: block;
   }
 
@@ -310,5 +358,4 @@ export default {
     object-fit: contain;
   }
 }
-
 </style>

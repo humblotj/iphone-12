@@ -2,8 +2,7 @@
   <div class="note">
     <div class="container">
       <p class="note-text">
-        This project was made for educational purposes
-        and is not affiliated with Apple in any way.
+        This project was made for educational purposes and is not affiliated with Apple in any way.
         All rights of the images, logos, and texts belong to Apple.
       </p>
     </div>

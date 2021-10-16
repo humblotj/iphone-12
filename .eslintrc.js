@@ -7,6 +7,8 @@ module.exports = {
     'plugin:vue/vue3-essential',
     'plugin:vue/vue3-recommended',
     'airbnb-base',
+    'plugin:prettier-vue/recommended',
+    'prettier',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -18,30 +20,35 @@ module.exports = {
       jsx: false,
     },
   },
-  plugins: [
-    'vue',
-  ],
+  plugins: ['vue'],
   rules: {
-    'vue/html-indent': ['error', 2, {
-      attribute: 1,
-      baseIndent: 1,
-      closeBracket: 0,
-      alignAttributesVertically: true,
-      ignores: [],
-    }],
+    'vue/html-indent': [
+      'error',
+      2,
+      {
+        attribute: 1,
+        baseIndent: 1,
+        closeBracket: 0,
+        alignAttributesVertically: true,
+        ignores: [],
+      },
+    ],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
-    'vue/component-name-in-template-casing': ['error',
-      'PascalCase',
-    ],
+    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
     'vue/no-v-html': 0,
-    'vue/html-closing-bracket-spacing': ['error', {
-      startTag: 'never',
-      endTag: 'never',
-      selfClosingTag: 'always',
-    }],
+    'vue/html-closing-bracket-spacing': [
+      'error',
+      {
+        startTag: 'never',
+        endTag: 'never',
+        selfClosingTag: 'always',
+      },
+    ],
     'vue/max-attributes-per-line': 0,
     'max-len': 0,
     'no-plusplus': 0,
+    'vue/html-self-closing': 0,
+    'vue/script-setup-uses-vars': 0,
   },
 };

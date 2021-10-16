@@ -1,20 +1,27 @@
 <template>
   <div ref="device" class="device">
     <div class="hardware">
-      <img src="@/assets/5g_on_phone__qxgc670fz2aa_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 321px, (max-width: 991px) 520px, 770px"
-           alt=""
-           :srcset="onPhoneSrcSet"
-           width="1540"
-           height="2672"
-      >
+      <img
+        src="@/assets/5g_on_phone__qxgc670fz2aa_large_2x.jpg"
+        loading="lazy"
+        sizes="(max-width: 767px) 321px, (max-width: 991px) 520px, 770px"
+        alt=""
+        :srcset="onPhoneSrcSet"
+        width="1540"
+        height="2672"
+      />
       <div class="hardware-gradient" />
       <div class="screen">
-        <img src="@/assets/5g_top_ui__fh2pbo18aviq_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 269px, (max-width: 991px) 439px, 650px"
-             alt="" class="screen-ui-top"
-             :srcset="topUISrcSet"
-             width="1300"
-             height="400"
-        >
+        <img
+          src="@/assets/5g_top_ui__fh2pbo18aviq_large_2x.jpg"
+          loading="lazy"
+          sizes="(max-width: 767px) 269px, (max-width: 991px) 439px, 650px"
+          alt=""
+          class="screen-ui-top"
+          :srcset="topUISrcSet"
+          width="1300"
+          height="400"
+        />
         <div class="divider" />
         <slot />
       </div>
@@ -36,12 +43,14 @@ import topUI1300 from '../../assets/5g_top_ui__fh2pbo18aviq_large_2x.jpg';
 export default {
   setup() {
     const device = ref(null);
-    const {
-      loadAnimation, lottieScroll, animateTo, animateFromTo,
-    } = useAnimation(device);
+    const { loadAnimation, lottieScroll, animateTo, animateFromTo } = useAnimation(device);
 
     return {
-      device, loadAnimation, lottieScroll, animateTo, animateFromTo,
+      device,
+      loadAnimation,
+      lottieScroll,
+      animateTo,
+      animateFromTo,
     };
   },
   data() {
@@ -51,7 +60,9 @@ export default {
     };
   },
   mounted() {
-    gsap.fromTo(document.querySelector('._5g .ix-shadow'), { x: '-50%' },
+    gsap.fromTo(
+      document.querySelector('._5g .ix-shadow'),
+      { x: '-50%' },
       {
         x: '50%',
         scrollTrigger: {
@@ -60,7 +71,8 @@ export default {
           start: 0,
           end: `+=${(this.device.offsetHeight + window.innerHeight) * (20 / 100)}`,
         },
-      });
+      },
+    );
     this.animateTo(this.device, { y: '-10%' }, 15, 50);
     this.animateFromTo('.hardware-gradient', { y: 15 }, { y: 1002 }, 15, 50);
   },
@@ -94,7 +106,14 @@ export default {
   bottom: auto;
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(10%, rgba(0, 0, 0, 0.6)), color-stop(30%, #000));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(transparent),
+    color-stop(10%, rgba(0, 0, 0, 0.6)),
+    color-stop(30%, #000)
+  );
   background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.6) 10%, #000 30%);
 }
 

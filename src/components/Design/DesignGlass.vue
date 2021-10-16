@@ -2,23 +2,27 @@
   <div ref="designGlass" class="design-glass">
     <div class="container container--center-flex">
       <div class="sub-section-headline-wrap">
-        <h3 class="sub-section-headline">
-          Kicks glass.
-        </h3>
+        <h3 class="sub-section-headline">Kicks glass.</h3>
         <div class="ix-shadow" />
       </div>
-      <img src="@/assets/design_tougher_glass__czlsbgxawrki_large_2x.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 655px, 980px"
-           alt="" class="glass-img"
-           :srcset="glassSrcSet"
-      >
-      <img src="@/assets/design_tougher_glass__czlsbgxawrki_small_2x.jpg" loading="lazy" sizes="(max-width: 767px) 433px, 100vw"
-           alt="" class="glass-img-mobile"
-           :srcset="glassSmallSrcSet"
-      >
+      <img
+        src="@/assets/design_tougher_glass__czlsbgxawrki_large_2x.jpg"
+        loading="lazy"
+        sizes="(max-width: 767px) 100vw, (max-width: 991px) 655px, 980px"
+        alt=""
+        class="glass-img"
+        :srcset="glassSrcSet"
+      />
+      <img
+        src="@/assets/design_tougher_glass__czlsbgxawrki_small_2x.jpg"
+        loading="lazy"
+        sizes="(max-width: 767px) 433px, 100vw"
+        alt=""
+        class="glass-img-mobile"
+        :srcset="glassSmallSrcSet"
+      />
       <div class="design-glass-subheading-wrap">
-        <p class="design-glass-subheading">
-          Ceramic Shield, tougher than any smartphone glass
-        </p>
+        <p class="design-glass-subheading">Ceramic Shield, tougher than any smartphone glass</p>
         <div class="ix-shadow" />
       </div>
       <FakeLink :class-name="'learn-more-button learn-more-button--blue w-button'">
@@ -48,7 +52,9 @@ export default {
     const { animateTo, animateFromTo } = useAnimation(designGlass);
 
     return {
-      designGlass, animateTo, animateFromTo,
+      designGlass,
+      animateTo,
+      animateFromTo,
     };
   },
   data() {
@@ -69,6 +75,6 @@ export default {
 
 <style scoped>
 .learn-more-button {
-    opacity: 0;
+  opacity: 0;
 }
 </style>

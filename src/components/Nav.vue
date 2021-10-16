@@ -7,27 +7,13 @@
           <div class="mobile-burger-line" />
         </div>
         <FakeLink :class-name="'nav-link logo'" />
-        <FakeLink :class-name="'nav-link'">
-          Mac
-        </FakeLink>
-        <FakeLink :class-name="'nav-link'">
-          iPad
-        </FakeLink>
-        <FakeLink :class-name="'nav-link'">
-          iPhone
-        </FakeLink>
-        <FakeLink :class-name="'nav-link'">
-          Watch
-        </FakeLink>
-        <FakeLink :class-name="'nav-link'">
-          TV
-        </FakeLink>
-        <FakeLink :class-name="'nav-link'">
-          Music
-        </FakeLink>
-        <FakeLink :class-name="'nav-link'">
-          Support
-        </FakeLink>
+        <FakeLink :class-name="'nav-link'"> Mac </FakeLink>
+        <FakeLink :class-name="'nav-link'"> iPad </FakeLink>
+        <FakeLink :class-name="'nav-link'"> iPhone </FakeLink>
+        <FakeLink :class-name="'nav-link'"> Watch </FakeLink>
+        <FakeLink :class-name="'nav-link'"> TV </FakeLink>
+        <FakeLink :class-name="'nav-link'"> Music </FakeLink>
+        <FakeLink :class-name="'nav-link'"> Support </FakeLink>
         <FakeLink :class-name="'nav-link search'" />
         <FakeLink :class-name="'nav-link bag'" />
       </div>
@@ -64,7 +50,7 @@ export default {
   padding-left: 10px;
   justify-content: center;
   align-items: center;
-  transition: opacity 200ms cubic-bezier(.645, .045, .355, 1);
+  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
   color: #f5f5f7;
   font-size: 15px;
   text-align: center;
