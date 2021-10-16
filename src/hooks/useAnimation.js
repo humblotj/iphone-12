@@ -139,9 +139,6 @@ const useAnimation = (ref, animationStartEntering = true) => {
       ...rest,
     };
 
-    // eslint-disable-next-line no-unused-expressions
-    className === null && console.log(targets, customElement);
-
     if (duration) {
       vars.duration = duration;
     }
