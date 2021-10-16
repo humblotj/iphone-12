@@ -30,7 +30,9 @@ gsap.defaults().ease = 'linear';
 
 const firebaseConfig = JSON.parse(process.env.VUE_APP_API_KEY);
 initializeApp(firebaseConfig);
-getAnalytics();
+if (process.env.NODE_ENV !== 'development') {
+  getAnalytics();
+}
 
 export default {
   name: 'App',
