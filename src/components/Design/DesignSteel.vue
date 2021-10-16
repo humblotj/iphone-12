@@ -22,20 +22,20 @@ import steel from '../../assets/steel.json';
 export default {
   setup() {
     const designSteel = ref(null);
-    const { loadAnimation, lottieScroll, animateOpacity, animateFromTo } =
+    const { loadAnimation, animateLottie, animateOpacity, animateFromTo } =
       useAnimation(designSteel);
 
     return {
       designSteel,
       loadAnimation,
-      lottieScroll,
+      animateLottie,
       animateOpacity,
       animateFromTo,
     };
   },
   mounted() {
     const stealAnimation = this.loadAnimation('.steel-anim', steel);
-    this.lottieScroll(stealAnimation, { start: 20, end: 60, to: 100 });
+    this.animateLottie(stealAnimation, { start: 20, end: 60, to: 100 });
     this.animateFromTo('.design-steel-text-wrap--left .ix-shadow', {
       from: { y: '-50%' },
       to: { y: '50%' },

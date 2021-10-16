@@ -197,8 +197,8 @@ export default {
   },
   setup() {
     const fiveG = ref(null);
-    const { animateTo, animateOpacity, loadAnimation, lottieScroll } = useAnimation(fiveG);
-    return { fiveG, animateTo, animateOpacity, loadAnimation, lottieScroll };
+    const { animateTo, animateOpacity, loadAnimation, animateLottie } = useAnimation(fiveG);
+    return { fiveG, animateTo, animateOpacity, loadAnimation, animateLottie };
   },
   data() {
     return {
@@ -247,7 +247,7 @@ export default {
         customElement: films[i],
         renderer: 'svg',
       });
-      this.lottieScroll(downloadAnimation, {
+      this.animateLottie(downloadAnimation, {
         start: 0,
         end: 5,
         to: 100,

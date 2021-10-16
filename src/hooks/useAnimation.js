@@ -22,7 +22,7 @@ const useAnimation = (ref, animationStartEntering = true) => {
     });
   };
 
-  const lottieScroll = (animation, { start, end, to, customElement }) => {
+  const animateLottie = (animation, { start, end, to, customElement }) => {
     const element = customElement || ref ? ref.value : document.body;
     if (!element) {
       return;
@@ -151,7 +151,7 @@ const useAnimation = (ref, animationStartEntering = true) => {
 
   return {
     loadAnimation,
-    lottieScroll,
+    animateLottie,
     animateFromTo,
     animateTo,
     animateOpacity,
