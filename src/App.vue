@@ -11,12 +11,11 @@
 </template>
 
 <script>
+/* eslint-disable import/no-extraneous-dependencies */
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import firebase from 'firebase/app';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import 'firebase/analytics';
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
 
 import Note from './components/Note.vue';
 import Nav from './components/Nav.vue';
@@ -29,10 +28,9 @@ import Thanks from './components/Thanks.vue';
 gsap.registerPlugin(ScrollTrigger);
 gsap.defaults().ease = 'linear';
 
-const config = JSON.parse(process.env.VUE_APP_API_KEY);
-firebase.initializeApp({
-  ...config,
-});
+const firebaseConfig = JSON.parse(process.env.VUE_APP_API_KEY);
+initializeApp(firebaseConfig);
+getAnalytics();
 
 export default {
   name: 'App',
