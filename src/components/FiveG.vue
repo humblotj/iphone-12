@@ -163,9 +163,8 @@
 
 <script>
 import { ref } from 'vue';
-import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import lottie from 'lottie-web';
+
+import useAnimation from '../hooks/useAnimation';
 import Device from './FiveG/Device.vue';
 import download from '../assets/download.json';
 import show1500 from '../assets/5g_show_01__bf4l35s1jn1e_large_2x-p-500.jpeg';
@@ -198,8 +197,8 @@ export default {
   },
   setup() {
     const fiveG = ref(null);
-
-    return { fiveG };
+    const { animateTo, animateOpacity, loadAnimation, lottieScroll } = useAnimation(fiveG);
+    return { fiveG, animateTo, animateOpacity, loadAnimation, lottieScroll };
   },
   data() {
     return {
@@ -220,90 +219,41 @@ export default {
     const element = this.fiveG;
     const shows = element.querySelectorAll('.download--show');
     for (let i = 0; i < shows.length; i++) {
-      this.animateTo(
-        shows[i],
-        shows[i],
-        {
+      this.animateTo(null, {
+        to: {
           scale: 1,
           opacity: 1,
           y: 0,
         },
-        0,
-        5,
-      );
-      this.animateTo(shows[i], '.download-text', { opacity: 0 }, 4, 5, false);
+        start: 0,
+        end: 5,
+        customElement: shows[i],
+      });
+      this.animateOpacity('.download-text', { to: 0, start: 4, end: 5, customElement: shows[i] });
     }
     const films = element.querySelectorAll('.download--film');
     for (let i = 0; i < films.length; i++) {
-      this.animateTo(
-        films[i],
-        films[i],
-        {
+      this.animateTo(null, {
+        to: {
           scale: 1,
           opacity: 1,
           y: 0,
         },
-        0,
-        5,
-      );
-
-      const downloadAnimation = this.loadAnimation(films[i], '.ui-download-progress', download);
-      this.lottieScroll(films[i], downloadAnimation, {
+        start: 0,
+        end: 5,
+        customElement: films[i],
+      });
+      const downloadAnimation = this.loadAnimation('.ui-download-progress', download, {
+        customElement: films[i],
+        renderer: 'svg',
+      });
+      this.lottieScroll(downloadAnimation, {
         start: 0,
         end: 5,
         to: 100,
+        customElement: films[i],
       });
     }
-  },
-  methods: {
-    loadAnimation(element, className, animationData, renderer = 'svg') {
-      return lottie.loadAnimation({
-        container: element.querySelector(className),
-        renderer,
-        animationData,
-        loop: false,
-        autoplay: false,
-      });
-    },
-    lottieScroll(element, animation, { start, end, to }) {
-      const animationStart = `${
-        (element.offsetHeight + window.innerHeight) * (start / 100)
-      } bottom`;
-      const animationEnd = `+=${
-        (element.offsetHeight + window.innerHeight) * ((end - start) / 100)
-      }`;
-
-      ScrollTrigger.create({
-        trigger: element,
-        scrub: true,
-        start: animationStart,
-        end: animationEnd,
-        onUpdate: (self) => {
-          animation.goToAndStop(self.progress * (animation.totalFrames - 1) * (to / 100), true);
-        },
-      });
-    },
-    animateTo(element, className, to, start, end, immediateRender = true) {
-      const animationStart = `${
-        (element.offsetHeight + window.innerHeight) * (start / 100)
-      } bottom`;
-      const animationEnd = `+=${
-        (element.offsetHeight + window.innerHeight) * ((end - start) / 100)
-      }`;
-
-      const targets =
-        typeof className === 'string' ? element.querySelectorAll(className) : className;
-      gsap.to(targets, {
-        ...to,
-        immediateRender,
-        scrollTrigger: {
-          trigger: element,
-          scrub: true,
-          start: animationStart,
-          end: animationEnd,
-        },
-      });
-    },
   },
 };
 </script>

@@ -48,7 +48,9 @@ module.exports = {
     'vue/max-attributes-per-line': 0,
     'max-len': 0,
     'no-plusplus': 0,
+    'no-unused-vars': 1,
     'vue/html-self-closing': 0,
     'vue/script-setup-uses-vars': 0,
+    'consistent-return': 0,
   },
 };

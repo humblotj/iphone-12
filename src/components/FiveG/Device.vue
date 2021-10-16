@@ -43,12 +43,10 @@ import topUI1300 from '../../assets/5g_top_ui__fh2pbo18aviq_large_2x.jpg';
 export default {
   setup() {
     const device = ref(null);
-    const { loadAnimation, lottieScroll, animateTo, animateFromTo } = useAnimation(device);
+    const { animateTo, animateFromTo } = useAnimation(device);
 
     return {
       device,
-      loadAnimation,
-      lottieScroll,
       animateTo,
       animateFromTo,
     };
@@ -73,8 +71,13 @@ export default {
         },
       },
     );
-    this.animateTo(this.device, { y: '-10%' }, 15, 50);
-    this.animateFromTo('.hardware-gradient', { y: 15 }, { y: 1002 }, 15, 50);
+    this.animateTo(null, { to: { y: '-10%' }, start: 15, end: 50 });
+    this.animateFromTo('.hardware-gradient', {
+      from: { y: 15 },
+      to: { y: 1002 },
+      start: 15,
+      end: 50,
+    });
   },
 };
 </script>
@@ -106,14 +109,6 @@ export default {
   bottom: auto;
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(transparent),
-    color-stop(10%, rgba(0, 0, 0, 0.6)),
-    color-stop(30%, #000)
-  );
   background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.6) 10%, #000 30%);
 }
 

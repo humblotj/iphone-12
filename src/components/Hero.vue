@@ -121,12 +121,12 @@ import heroEndframePortrait2040 from '../assets/hero_endframe_portrait__k4dfs3u1
 export default {
   setup() {
     const hero = ref(null);
-    const { animateFromTo, animateTo } = useAnimation(hero, false);
+    const { animateFromTo, animateOpacity } = useAnimation(hero, false);
 
     return {
       hero,
       animateFromTo,
-      animateTo,
+      animateOpacity,
     };
   },
   data() {
@@ -157,17 +157,14 @@ export default {
       delay: 5.5,
     });
 
-    this.opacity('.container', 0, 40, 1);
-    this.opacity('.container', 0, 40, 1);
-    this.move('.hero-video-wrap', 0, 40);
-    this.opacity('.hero-headline', 0, 12, 0);
+    this.animateOpacity('.container', { start: 0, end: 40 });
+    this.animateOpacity('.container', { start: 0, end: 40 });
+    this.animateTranslate('.hero-video-wrap', { start: 0, end: 40 });
+    this.animateOpacity('.hero-headline', { start: 0, end: 12, to: 0 });
   },
   methods: {
-    move(className, start, end, immediateRender = true) {
-      this.animateFromTo(className, { y: 0 }, { y: '-20vh' }, start, end, immediateRender);
-    },
-    opacity(className, start, end, to, immediateRender = true) {
-      this.animateTo(className, { opacity: to }, start, end, immediateRender);
+    animateTranslate(className, { start, end }) {
+      this.animateFromTo(className, { from: { y: 0 }, to: { y: '-20vh' }, start, end });
     },
   },
 };

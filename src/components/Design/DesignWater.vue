@@ -34,11 +34,11 @@ import water2016 from '../../assets/design_water_resistance__bx3cq2uzbzw2_large_
 export default {
   setup() {
     const designWater = ref(null);
-    const { animateTo, animateFromTo } = useAnimation(designWater);
+    const { animateOpacity, animateFromTo } = useAnimation(designWater);
 
     return {
       designWater,
-      animateTo,
+      animateOpacity,
       animateFromTo,
     };
   },
@@ -48,11 +48,16 @@ export default {
     };
   },
   mounted() {
-    this.animateTo('.water-img', { opacity: 1 }, 10, 25);
-    this.animateFromTo('.water-img', { y: 100 }, { y: -100 }, 20, 80);
-    this.animateFromTo('.design-water-text-wrap', { y: -150 }, { y: 150 }, 20, 80);
-    this.animateTo('.design-water-text-wrap', { opacity: 1 }, 20, 40);
-    this.animateTo('.container', { opacity: 0 }, 60, 80, false);
+    this.animateOpacity('.water-img', { start: 10, end: 25 });
+    this.animateFromTo('.water-img', { from: { y: 100 }, to: { y: -100 }, start: 20, end: 80 });
+    this.animateFromTo('.design-water-text-wrap', {
+      from: { y: -150 },
+      to: { y: 150 },
+      start: 20,
+      end: 80,
+    });
+    this.animateOpacity('.design-water-text-wrap', { start: 20, end: 40 });
+    this.animateOpacity('.container', { to: 0, start: 60, end: 80 });
   },
 };
 </script>

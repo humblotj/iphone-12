@@ -39,20 +39,24 @@ import useAnimation from '../../hooks/useAnimation';
 export default {
   setup() {
     const designFinishes = ref(null);
-    const { animateTo } = useAnimation(designFinishes);
+    const { animateOpacity } = useAnimation(designFinishes);
     const isInit = ref(null);
 
     return {
       designFinishes,
-      animateTo,
+      animateOpacity,
       isInit,
     };
   },
   methods: {
     handleLoad() {
       if (!this.isInit) {
-        this.animateTo('.design-finishes-text-wrap', { opacity: 1 }, 50, 60);
-        this.animateTo(this.designFinishes, { opacity: 0 }, 70, 90, false);
+        this.animateOpacity('.design-finishes-text-wrap', { start: 50, end: 60 });
+        this.animateOpacity(null, {
+          to: 0,
+          start: 70,
+          end: 90,
+        });
         this.isInit = true;
       }
     },

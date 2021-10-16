@@ -33,8 +33,13 @@ export default {
     };
   },
   mounted() {
-    this.animateFromTo('.ix-shadow', { x: '-50%' }, { x: '50%' }, 20, 35);
-    this.animateFromTo('.design-bezel-img', { y: '10%' }, { y: '-10%' }, 20, 50);
+    this.animateFromTo('.ix-shadow', { from: { x: '-50%' }, to: { x: '50%' }, start: 20, end: 35 });
+    this.animateFromTo('.design-bezel-img', {
+      from: { y: '10%' },
+      to: { y: '-10%' },
+      start: 20,
+      end: 50,
+    });
   },
 };
 </script>

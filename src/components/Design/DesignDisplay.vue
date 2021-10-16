@@ -51,18 +51,27 @@ export default {
   },
   setup() {
     const designDisplay = ref(null);
-    const { animateTo, animateFromTo } = useAnimation(designDisplay);
+    const { animateOpacity, animateFromTo } = useAnimation(designDisplay);
 
     return {
       designDisplay,
-      animateTo,
+      animateOpacity,
       animateFromTo,
     };
   },
   mounted() {
-    this.animateTo('.design-display-compare-wrap', { opacity: 1 }, 30, 40);
-    this.animateFromTo('.video, .container.container--center', { y: 150 }, { y: -150 }, 30, 80);
-    this.animateTo('.design-display-compare-wrap', { opacity: 0 }, 55, 80, false);
+    this.animateOpacity('.design-display-compare-wrap', { start: 30, end: 40 });
+    this.animateFromTo('.video, .container.container--center', {
+      from: { y: 150 },
+      to: { y: -150 },
+      start: 30,
+      end: 80,
+    });
+    this.animateOpacity('.design-display-compare-wrap', {
+      to: 0,
+      start: 55,
+      end: 80,
+    });
   },
 };
 </script>

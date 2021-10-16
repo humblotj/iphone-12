@@ -49,11 +49,11 @@ export default {
   },
   setup() {
     const designGlass = ref(null);
-    const { animateTo, animateFromTo } = useAnimation(designGlass);
+    const { animateOpacity, animateFromTo } = useAnimation(designGlass);
 
     return {
       designGlass,
-      animateTo,
+      animateOpacity,
       animateFromTo,
     };
   },
@@ -64,11 +64,16 @@ export default {
     };
   },
   mounted() {
-    this.animateFromTo('.glass-img', { y: 80 }, { y: -70 }, 30, 80);
-    this.animateFromTo('.learn-more-button', { y: 150 }, { y: -25 }, 30, 55);
-    this.animateFromTo('.ix-shadow', { x: '-50%' }, { x: '50%' }, 40, 55);
-    this.animateTo('.learn-more-button', { opacity: 1 }, 40, 55);
-    this.animateTo('.container', { opacity: 0 }, 55, 80, false);
+    this.animateFromTo('.glass-img', { from: { y: 80 }, to: { y: -70 }, start: 30, end: 80 });
+    this.animateFromTo('.learn-more-button', {
+      from: { y: 150 },
+      to: { y: -25 },
+      start: 30,
+      end: 55,
+    });
+    this.animateFromTo('.ix-shadow', { from: { x: '-50%' }, to: { x: '50%' }, start: 40, end: 55 });
+    this.animateOpacity('.learn-more-button', { start: 40, end: 55 });
+    this.animateOpacity('.container', { to: 0, start: 55, end: 80 });
   },
 };
 </script>

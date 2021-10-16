@@ -107,7 +107,6 @@ export default {
   margin-right: auto;
   margin-bottom: 0px;
   margin-left: auto;
-  background-image: -webkit-gradient(linear, left top, right top, from(#005e7f), to(#61b6cd));
   background-image: linear-gradient(90deg, #005e7f, #61b6cd);
   font-size: 32px;
   line-height: 1.12;

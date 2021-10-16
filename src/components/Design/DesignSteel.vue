@@ -22,36 +22,45 @@ import steel from '../../assets/steel.json';
 export default {
   setup() {
     const designSteel = ref(null);
-    const { loadAnimation, lottieScroll, animateTo, animateFromTo } = useAnimation(designSteel);
+    const { loadAnimation, lottieScroll, animateOpacity, animateFromTo } =
+      useAnimation(designSteel);
 
     return {
       designSteel,
       loadAnimation,
       lottieScroll,
-      animateTo,
+      animateOpacity,
       animateFromTo,
     };
   },
   mounted() {
     const stealAnimation = this.loadAnimation('.steel-anim', steel);
     this.lottieScroll(stealAnimation, { start: 20, end: 60, to: 100 });
-    this.animateFromTo(
-      '.design-steel-text-wrap--left .ix-shadow',
-      { y: '-50%' },
-      { y: '50%' },
-      20,
-      35,
-    );
-    this.animateFromTo('.design-steel-text-wrap--left', { y: 0 }, { y: '100%' }, 20, 60);
-    this.animateFromTo('.design-steel-text-wrap--right', { y: '10%' }, { y: '-100%' }, 20, 60);
-    this.animateFromTo(
-      '.design-steel-text-wrap--right .ix-shadow',
-      { y: '-50%' },
-      { y: '50%' },
-      35,
-      50,
-    );
-    this.animateTo('.design-steel-text-wrap', { opacity: 0 }, 50, 60, false);
+    this.animateFromTo('.design-steel-text-wrap--left .ix-shadow', {
+      from: { y: '-50%' },
+      to: { y: '50%' },
+      start: 20,
+      end: 35,
+    });
+    this.animateFromTo('.design-steel-text-wrap--left', {
+      from: { y: 0 },
+      to: { y: '100%' },
+      start: 20,
+      end: 60,
+    });
+    this.animateFromTo('.design-steel-text-wrap--right', {
+      from: { y: '10%' },
+      to: { y: '-100%' },
+      start: 20,
+      end: 60,
+    });
+    this.animateFromTo('.design-steel-text-wrap--right .ix-shadow', {
+      from: { y: '-50%' },
+      to: { y: '50%' },
+      start: 35,
+      end: 50,
+    });
+    this.animateOpacity('.design-steel-text-wrap', { to: 0, start: 50, end: 60 });
   },
 };
 </script>
